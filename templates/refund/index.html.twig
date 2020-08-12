@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Refund index{% endblock %}
+
+{% block body %}
+    <h1>Refund index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Order_code</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Country</th>
+                <th>Street_address</th>
+                <th>Postcode</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Credit_card_number</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for refund in refunds %}
+            <tr>
+                <td>{{ refund.id }}</td>
+                <td>{{ refund.orderCode }}</td>
+                <td>{{ refund.name }}</td>
+                <td>{{ refund.surname }}</td>
+                <td>{{ refund.country }}</td>
+                <td>{{ refund.streetAddress }}</td>
+                <td>{{ refund.postcode }}</td>
+                <td>{{ refund.city }}</td>
+                <td>{{ refund.email }}</td>
+                <td>{{ refund.phone }}</td>
+                <td>{{ refund.creditCardNumber }}</td>
+                <td>
+                    <a href="{{ path('refund_show', {'id': refund.id}) }}">show</a>
+                    <a href="{{ path('refund_edit', {'id': refund.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('refund_new') }}">Create new</a>
+{% endblock %}
