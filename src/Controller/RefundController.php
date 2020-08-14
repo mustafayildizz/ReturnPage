@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Refund;
 use App\Form\RefundType;
 use App\Repository\RefundRepository;
+use phpDocumentor\Reflection\Types\Void_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,7 +40,12 @@ class RefundController extends AbstractController
             $entityManager->persist($refund);
             $entityManager->flush();
 
-            return $this->redirectToRoute('refund_index');
+            $this->addFlash(
+                'success',
+                'Your changes were saved!'
+            );
+
+            return $this->redirectToRoute('refund_new');
         }
 
         return $this->render('refund/new.html.twig', [

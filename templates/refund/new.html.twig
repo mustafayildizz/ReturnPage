@@ -5,7 +5,85 @@
 {% block body %}
     <h1>Create new Refund</h1>
 
-    {{ include('refund/_form.html.twig') }}
+    {{ include('messages.html.twig') }}
 
-    <a href="{{ path('refund_index') }}">back to list</a>
+
+
+    <!-- Shopping Cart Section Begin -->
+    <section class="checkout-section spad">
+        <div class="container">
+            <form name="refund" method="post" class="checkout-form">
+                <div class="row">
+                    {{ form_start(form) }}
+                    <div class="col-lg-6">
+                        <div class="checkout-content">
+                            <a href="#" class="content-btn">Click Here To Login</a>
+                        </div>
+                        <h4>Biiling Details</h4>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label for="fir">Order Code<span>*</span></label>
+                                {{ form_row(form.order_code) }}
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="fir">First Name<span>*</span></label>
+                                {{ form_row(form.name) }}
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="last">Last Name<span>*</span></label>
+                                {{ form_row(form.surname) }}
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="cun">Country<span>*</span></label>
+                                {{ form_row(form.country) }}
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="street">Street Address<span>*</span></label>
+                                {{ form_row(form.street_address) }}
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="zip">Postcode / ZIP (optional)</label>
+                                {{ form_row(form.postcode) }}
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="town">Town / City<span>*</span></label>
+                                {{ form_row(form.city) }}
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="email">Email Address<span>*</span></label>
+                                {{ form_row(form.email) }}
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="phone">Phone<span>*</span></label>
+                                {{ form_row(form.phone) }}
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="phone">Credit Card Number<span>*</span></label>
+                                {{ form_row(form.credit_card_number) }}
+                            </div>
+                            <div class="col-lg-1">
+                                Agree Terms? {{ form_row(form.checkbox) }}
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="order-btn">
+                                    <button type="submit" class="site-btn place-btn">Place Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="place-order">
+                            <div class="order-total">
+                                Refund Policy
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                {{ form_end(form) }}
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Shopping Cart Section End -->
+
 {% endblock %}

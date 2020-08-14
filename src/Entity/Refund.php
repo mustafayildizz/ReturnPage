@@ -67,6 +67,11 @@ class Refund
      */
     private $credit_card_number;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $checkbox;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -188,6 +193,18 @@ class Refund
     public function setCreditCardNumber(string $credit_card_number): self
     {
         $this->credit_card_number = $credit_card_number;
+
+        return $this;
+    }
+
+    public function getCheckbox(): ?bool
+    {
+        return $this->checkbox;
+    }
+
+    public function setCheckbox(?bool $checkbox): self
+    {
+        $this->checkbox = $checkbox;
 
         return $this;
     }

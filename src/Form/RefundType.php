@@ -3,25 +3,69 @@
 namespace App\Form;
 
 use App\Entity\Refund;
+use Container5uAYmHG\getSecurity_Csrf_TokenManagerService;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\IsTrue;
 
 class RefundType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('order_code')
-            ->add('name')
-            ->add('surname')
-            ->add('country')
-            ->add('street_address')
-            ->add('postcode')
-            ->add('city')
-            ->add('email')
-            ->add('phone')
-            ->add('credit_card_number')
+            ->add('order_code', null, [
+                'required' => true,
+                'label' => false,
+
+            ])
+            ->add('name', null, [
+                'required' => true,
+                'label' => false,
+
+            ])
+            ->add('surname', null, [
+                'required' => true,
+                'label' => false,
+            ])
+            ->add('country', null, [
+                'required' => true,
+                'label' => false,
+            ])
+            ->add('street_address', null, [
+                'required' => true,
+                'label' => false,
+            ])
+            ->add('postcode', null, [
+                'required' => true,
+                'label' => false,
+            ])
+            ->add('city', null, [
+                'required' => true,
+                'label' => false,
+            ])
+            ->add('email', null, [
+                'required' => true,
+                'label' => false,
+            ])
+            ->add('phone', null, [
+                'required' => true,
+                'label' => false,
+            ])
+            ->add('credit_card_number', null, [
+                'required' => true,
+                'label' => false,
+            ])
+            ->add('checkbox', CheckboxType::class, [
+                'mapped' => false,
+                'label' => false,
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'You should agree to our terms.',
+                    ]),
+                ],
+            ])
         ;
     }
 
@@ -29,6 +73,7 @@ class RefundType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Refund::class,
+            'csrf_protection' => false,
         ]);
     }
 }
