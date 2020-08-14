@@ -6,6 +6,7 @@ use App\Entity\Refund;
 use Container5uAYmHG\getSecurity_Csrf_TokenManagerService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -56,6 +57,11 @@ class RefundType extends AbstractType
             ->add('credit_card_number', null, [
                 'required' => true,
                 'label' => false,
+            ])
+            ->add('order_detail', TextareaType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => array('cols' => '61', 'rows' => '5'),
             ])
             ->add('checkbox', CheckboxType::class, [
                 'mapped' => false,

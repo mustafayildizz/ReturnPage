@@ -58,12 +58,17 @@
                                 {{ form_row(form.phone) }}
                             </div>
                             <div class="col-lg-12">
-                                <label for="phone">Credit Card Number<span>*</span></label>
+                                <label for="credit_card_number">Credit Card Number<span>*</span></label>
                                 {{ form_row(form.credit_card_number) }}
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="order_detail">Order Detail<span>*</span></label>
+                                {{ form_row(form.order_detail) }}
                             </div>
                             <div class="col-lg-1">
                                 Agree Terms? {{ form_row(form.checkbox) }}
                             </div>
+
                             <div class="col-lg-12">
                                 <div class="order-btn">
                                     <button type="submit" class="site-btn place-btn">Place Order</button>
