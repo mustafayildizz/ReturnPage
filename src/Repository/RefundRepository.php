@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Refund;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\DBAL\DBALException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -47,4 +48,30 @@ class RefundRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getCreatedTime() {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = 'SELECT created_at FROM refund';
+
+        $stmt = $conn->prepare($sql);
+        try {
+            $stmt->execute();
+        } catch (DBALException $e) {
+        }
+
+        return $stmt->fetchAll();
+    }
+
+    public function getByStatus($status) {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'SELECT * FROM refund 
+                WHERE refund.status= :status';
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['status'=>$status]);
+
+        return $stmt->fetchAll();
+    }
+
 }

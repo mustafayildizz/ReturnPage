@@ -50,7 +50,7 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th>Order_code</th>
+                                    <th>The Passing Time</th>
                                     <th>Name</th>
                                     <th>Surname</th>
                                     <th>Country</th>
@@ -59,23 +59,25 @@
                                     <th>City</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Credit_card_number</th>
+                                    <th>Status</th>
                                     <th>actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {% for refund in refunds %}
                                     <tr>
-                                        <td>{{ refund.orderCode }}</td>
+                                        {% if loop.index0 < remain %}
+                                        <td>{{ remain[loop.index0] }}</td>
+                                        {% endif %}
                                         <td>{{ refund.name }}</td>
                                         <td>{{ refund.surname }}</td>
                                         <td>{{ refund.country }}</td>
-                                        <td>{{ refund.streetAddress }}</td>
+                                        <td>{{ refund.street_address }}</td>
                                         <td>{{ refund.postcode }}</td>
                                         <td>{{ refund.city }}</td>
                                         <td>{{ refund.email }}</td>
                                         <td>{{ refund.phone }}</td>
-                                        <td>{{ refund.creditCardNumber }}</td>
+                                        <td>{{ refund.status }}</td>
                                         <td>
                                             <a href="{{ path('refund_show', {'id': refund.id}) }}" class="btn btn-info">Show</a>
                                             <br>
@@ -89,8 +91,6 @@
                                 {% endfor %}
                                 </tbody>
                             </table>
-
-                            <a href="{{ path('refund_new') }}">Create new</a>
                         </div>
                     </div>
                 </div>

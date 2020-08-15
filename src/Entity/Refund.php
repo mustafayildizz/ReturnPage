@@ -87,6 +87,16 @@ class Refund
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $messages;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -255,7 +265,30 @@ class Refund
 
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
-        $this->updated_at = $updated_at;
+        $this->updated_at = new \DateTime("now");
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(?string $status): self
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    public function getMessages(): ?string
+    {
+        return $this->messages;
+    }
+
+    public function setMessages(?string $messages): self
+    {
+        $this->messages = $messages;
 
         return $this;
     }

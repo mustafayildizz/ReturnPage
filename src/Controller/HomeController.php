@@ -31,6 +31,10 @@ class HomeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $refund->setCreatedAt(new \DateTime());
+            $refund->setStatus('New');
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($refund);
             $entityManager->flush();

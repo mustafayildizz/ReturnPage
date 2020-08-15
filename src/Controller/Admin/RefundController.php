@@ -3,8 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Refund;
+use App\Form\Refund1Type;
 use App\Form\RefundType;
 use App\Repository\RefundRepository;
+use DateTime;
 use phpDocumentor\Reflection\Types\Void_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,50 +19,72 @@ use Symfony\Component\Routing\Annotation\Route;
 class RefundController extends AbstractController
 {
     /**
-     * @Route("/", name="refund_index", methods={"GET"})
+     * @Route("/{slug}", name="refund_index", methods={"GET"})
      */
-    public function index(RefundRepository $refundRepository): Response
-    {
-        return $this->render('refund/index.html.twig', [
-            'refunds' => $refundRepository->findAll(),
-        ]);
-    }
-
-    /**
-     * @Route("/new", name="refund_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
+    public function index(RefundRepository $refundRepository, $slug): Response
     {
         $refund = new Refund();
-        $form = $this->createForm(RefundType::class, $refund);
-        $form->handleRequest($request);
+        date_default_timezone_set('Europe/Istanbul');
+        $refunds = $refundRepository->getByStatus($slug);
+        $tarih = $refundRepository->getCreatedTime();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($refund);
-            $entityManager->flush();
+        for ($deger = 0; $deger < count($tarih); $deger++) {
+            $date = new DateTime($tarih[$deger]["created_at"]);
+            $now = new DateTime();
 
-            $this->addFlash(
-                'success',
-                'Your changes were saved!'
-            );
+            $date = date_diff($now, $date);
 
-            return $this->redirectToRoute('refund_new');
+
+            $realdate[$deger] = $date->format('%d Day %h Hours');
+
         }
 
-        return $this->render('refund/new.html.twig', [
-            'refund' => $refund,
-            'form' => $form->createView(),
+        return $this->render('refund/index.html.twig', [
+            'refunds' => $refunds,
+            'remain' => $realdate,
         ]);
     }
+
+//    /**
+//     * @Route("/new", name="refund_new", methods={"GET","POST"})
+//     */
+//    public function new(Request $request): Response
+//    {
+//        $refund = new Refund();
+//        $form = $this->createForm(RefundType::class, $refund);
+//        $form->handleRequest($request);
+//
+//
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $entityManager = $this->getDoctrine()->getManager();
+//            $entityManager->persist($refund);
+//            $entityManager->flush();
+//
+//            $this->addFlash(
+//                'success',
+//                'Your changes were saved!'
+//            );
+//
+//            return $this->redirectToRoute('refund_new');
+//        }
+//
+//        return $this->render('refund/new.html.twig', [
+//            'refund' => $refund,
+//            'form' => $form->createView(),
+//        ]);
+//    }
 
     /**
      * @Route("/{id}", name="refund_show", methods={"GET"})
      */
     public function show(Refund $refund): Response
     {
+
+
         return $this->render('refund/show.html.twig', [
             'refund' => $refund,
+
         ]);
     }
 
@@ -69,13 +93,15 @@ class RefundController extends AbstractController
      */
     public function edit(Request $request, Refund $refund): Response
     {
-        $form = $this->createForm(RefundType::class, $refund);
+        $form = $this->createForm(Refund1Type::class, $refund);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('refund_index');
+            $status = $form['status']->getData();
+
+            return $this->redirectToRoute('refund_index', ['slug' => $status]);
         }
 
         return $this->render('refund/edit.html.twig', [

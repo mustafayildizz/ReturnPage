@@ -97,6 +97,18 @@
                                     <th>Order Details</th>
                                     <td>{{ refund.orderDetail }}</td>
                                 </tr>
+                                <tr>
+                                    <th>Created at</th>
+                                    <td>{{ refund.createdAt|date("d-m-Y H:i:s") }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Status</th>
+                                    <td>{{ refund.status }}</td>
+                                </tr>
+{#                                <tr>#}
+{#                                    <th>Updated at</th>#}
+{#                                    <td>{{ refund.updatedAt }}</td>#}
+{#                                </tr>#}
                                 </tbody>
                             </table>
 
