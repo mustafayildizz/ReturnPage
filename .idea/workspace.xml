@@ -11,19 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdc05360-1fe3-4cf8-8192-deb94fe56e63" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ReturnPage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ReturnPage.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/adminloginbase.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/adminlogin.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/RefundController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/RefundController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Refund1Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Refund1Type.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RefundRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RefundRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/refund/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/refund/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/AppCustomAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/AppCustomAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +152,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Form" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -165,9 +161,10 @@
       <recent name="C:\xampp\htdocs\ReturnPage\templates\admin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ReturnPage\templates" />
+      <recent name="C:\xampp\htdocs\ReturnPage\templates\security" />
       <recent name="C:\xampp\htdocs\ReturnPage\src\Form" />
       <recent name="C:\xampp\htdocs\ReturnPage\templates\admin" />
-      <recent name="C:\xampp\htdocs\ReturnPage\templates" />
       <recent name="C:\xampp\htdocs\ReturnPage\templates\home" />
     </key>
   </component>
@@ -179,7 +176,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597242415782</updated>
-      <workItem from="1597242421227" duration="60429000" />
+      <workItem from="1597242421227" duration="68639000" />
     </task>
     <servers />
   </component>
