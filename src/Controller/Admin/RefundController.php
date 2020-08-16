@@ -4,10 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Refund;
 use App\Form\Refund1Type;
-use App\Form\RefundType;
 use App\Repository\RefundRepository;
 use DateTime;
-use phpDocumentor\Reflection\Types\Void_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +21,6 @@ class RefundController extends AbstractController
      */
     public function index(RefundRepository $refundRepository, $slug): Response
     {
-        $refund = new Refund();
         date_default_timezone_set('Europe/Istanbul');
         $refunds = $refundRepository->getByStatus($slug);
         $tarih = $refundRepository->getCreatedTime();
@@ -76,10 +73,11 @@ class RefundController extends AbstractController
 //    }
 
     /**
-     * @Route("/{id}", name="refund_show", methods={"GET"})
+     * @Route("/show/{id}", name="refund_show", methods={"GET"})
      */
-    public function show(Refund $refund): Response
+    public function show(RefundRepository $refundRepository, $id): Response
     {
+        $refund = $refundRepository->getRefunds($id);
 
 
         return $this->render('refund/show.html.twig', [
@@ -90,13 +88,28 @@ class RefundController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="refund_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Refund $refund
+     * @param \Swift_Mailer $mailer
+     * @return Response
      */
-    public function edit(Request $request, Refund $refund): Response
+    public function edit(Request $request, Refund $refund,  \Swift_Mailer $mailer): Response
     {
         $form = $this->createForm(Refund1Type::class, $refund);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $message = (new \Swift_Message('Hello Sir'))
+                ->setFrom('karabuktest@gmail.com')
+                ->setTo($form['email']->getData())
+                ->setBody(
+                    $form['messages']->getData()
+                );
+
+            $mailer->send($message);
+
+
             $this->getDoctrine()->getManager()->flush();
 
             $status = $form['status']->getData();
@@ -121,6 +134,6 @@ class RefundController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('refund_index');
+        return $this->redirectToRoute('refund_index',['slug' => 'new']);
     }
 }

@@ -11,16 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdc05360-1fe3-4cf8-8192-deb94fe56e63" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Form/Refund1Type.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ReturnPage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ReturnPage.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/RefundController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/RefundController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Refund.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Refund.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Refund1Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Refund1Type.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/RefundRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RefundRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/refund/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/refund/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/refund/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/refund/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/refund/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/refund/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/refund/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/refund/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,6 +141,9 @@
       <path value="$PROJECT_DIR$/vendor/webimpress/safe-writer" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1g0D2qVvFf3sQjQNbDxmtGGvleT" />
@@ -174,7 +179,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597242415782</updated>
-      <workItem from="1597242421227" duration="51826000" />
+      <workItem from="1597242421227" duration="60429000" />
     </task>
     <servers />
   </component>
@@ -205,9 +210,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="172" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1597409046970" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1597432472445">
+    <state x="540" y="140" key="NewPhpClassDialog" timestamp="1597507684385">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1597432472445" />
+    <state x="540" y="140" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1597507684385" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1597506339186">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1597506339186" />
   </component>
 </project>

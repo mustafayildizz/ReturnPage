@@ -74,4 +74,16 @@ class RefundRepository extends ServiceEntityRepository
         return $stmt->fetchAll();
     }
 
+    public function getRefunds($id) {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = 'SELECT * FROM refund 
+                WHERE refund.id= :id';
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['id'=>$id]);
+
+        return $stmt->fetchAll();
+    }
+
 }

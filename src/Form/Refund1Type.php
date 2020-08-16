@@ -20,44 +20,54 @@ class Refund1Type extends AbstractType
             ->add('order_code', null, [
                 'required' => true,
                 'label' => false,
+                'disabled' => true,
 
             ])
             ->add('name', null, [
                 'required' => true,
                 'label' => false,
+                'disabled' => true,
 
             ])
             ->add('surname', null, [
                 'required' => true,
                 'label' => false,
+                'disabled' => true,
             ])
             ->add('country', null, [
                 'required' => true,
                 'label' => false,
+                'disabled' => true,
             ])
             ->add('street_address', null, [
                 'required' => true,
                 'label' => false,
+                'disabled' => true,
             ])
             ->add('postcode', null, [
                 'required' => true,
                 'label' => false,
+                'disabled' => true,
             ])
             ->add('city', null, [
                 'required' => true,
                 'label' => false,
+                'disabled' => true,
             ])
             ->add('email', null, [
                 'required' => true,
                 'label' => false,
+                'disabled' => true,
             ])
             ->add('phone', null, [
                 'required' => true,
                 'label' => false,
+                'disabled' => true,
             ])
             ->add('credit_card_number', null, [
                 'required' => true,
                 'label' => false,
+                'disabled' => true,
             ])
             ->add('order_detail', TextareaType::class, [
                 'required' => true,
