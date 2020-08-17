@@ -1,6 +1,6 @@
 # Symfony Return Page Application
 ### Intro
-This application aims the return page for any e-commerce website. It developed in Symfony and uses MySQL as database. 
+This application aims to create a return page for any e-commerce website. It developed in Symfony and uses MySQL as database. 
 Users can any return operation for any product that order. All return operation stores in MySQL. Admin can see all return request at any time. 
 ### To deploy
 - First thing first create a database that any name you want. 
