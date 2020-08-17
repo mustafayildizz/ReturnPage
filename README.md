@@ -11,7 +11,7 @@ symfony server:start
 ```
 
 ## All tables and properties that have to create
-To create neccessary table, run these commands:
+To create neccessary tables, run these commands:
 ```console
 CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles LONGTEXT NOT NULL COMMENT \'(DC2Type:json)\', password VARCHAR(255) NOT NULL, name VARCHAR(50) NOT NULL, surname VARCHAR(51) NOT NULL, phone VARCHAR(20) NOT NULL, country VARCHAR(50) DEFAULT NULL, street_adress VARCHAR(255) DEFAULT NULL, postcode VARCHAR(25) DEFAULT NULL, city VARCHAR(100) DEFAULT NULL, UNIQUE INDEX UNIQ_8D93D649E7927C74 (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB
 ```
